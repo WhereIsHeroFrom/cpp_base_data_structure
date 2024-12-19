@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// ¹şÏ£±í½ÚµãÀà
+// å“ˆå¸Œè¡¨èŠ‚ç‚¹ç±»
 template<typename KeyType, typename ValueType>
 class HashNode {
 public:
@@ -16,14 +16,14 @@ public:
     }
 };
 
-// ¹şÏ£±íÀà
+// å“ˆå¸Œè¡¨ç±»
 template<typename KeyType, typename ValueType>
 class HashTable {
 private:
     int size;
     HashNode<KeyType, ValueType>** table;
 
-    // ¹şÏ£º¯Êı
+    // å“ˆå¸Œå‡½æ•°
     int hash(const KeyType& key) const {
         int hashkey = key % size;
         if (hashkey < 0) hashkey += size;
@@ -31,15 +31,15 @@ private:
     }
 
 public:
-    // ¹¹Ôìº¯Êı£¬³õÊ¼»¯¹şÏ£±íµÄ´óĞ¡
+    // æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–å“ˆå¸Œè¡¨çš„å¤§å°
     HashTable(int size = 1000);
-    // Îö¹¹º¯Êı£¬ÊÍ·Å¶¯Ì¬·ÖÅäµÄÄÚ´æ
+    // ææ„å‡½æ•°ï¼Œé‡Šæ”¾åŠ¨æ€åˆ†é…çš„å†…å­˜
     ~HashTable();
-    // ÔÚ¹şÏ£±íÖĞ²åÈë¼üÖµ¶Ô
+    // åœ¨å“ˆå¸Œè¡¨ä¸­æ’å…¥é”®å€¼å¯¹
     void insert(const KeyType& key, const ValueType& value);
-    // ´Ó¹şÏ£±íÖĞÉ¾³ı¼üÖµ¶Ô
+    // ä»å“ˆå¸Œè¡¨ä¸­åˆ é™¤é”®å€¼å¯¹
     void remove(const KeyType& key);
-    // ÔÚ¹şÏ£±íÖĞ²éÕÒÖ¸¶¨¼üµÄÖµ
+    // åœ¨å“ˆå¸Œè¡¨ä¸­æŸ¥æ‰¾æŒ‡å®šé”®çš„å€¼
     bool find(const KeyType& key, ValueType& value) const;
 };
 

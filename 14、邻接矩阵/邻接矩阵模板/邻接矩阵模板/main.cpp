@@ -58,7 +58,7 @@ int main() {
     graph.addEdge(4, 0, 4);
     graph.addEdge(4, 2, 5);
 
-    cout << "ÁÚ½Ó¾ØÕó±íÊ¾µÄÍ¼£º" << endl;
+    cout << "é‚»æŽ¥çŸ©é˜µè¡¨ç¤ºçš„å›¾ï¼š" << endl;
     graph.printGraph();
     return 0;
 }

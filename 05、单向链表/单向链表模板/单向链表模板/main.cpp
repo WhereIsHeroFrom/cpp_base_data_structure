@@ -4,14 +4,14 @@
 using namespace std;
 #define eleType int
 
-// Á´±í½Úµã½á¹¹Ìå
+// é“¾è¡¨èŠ‚ç‚¹ç»“æž„ä½“
 struct ListNode {
     eleType data;
     ListNode* next;
     ListNode(eleType x) : data(x), next(NULL) {}
 };
 
-// µ¥ÏòÁ´±íÀà
+// å•å‘é“¾è¡¨ç±»
 class LinkedList {
 private:
     ListNode* head;
@@ -19,14 +19,14 @@ private:
 
 public:
 
-    LinkedList() : head(NULL), size(0) {}    // Á´±í¹¹Ôìº¯Êý
+    LinkedList() : head(NULL), size(0) {}    // é“¾è¡¨æž„é€ å‡½æ•°
     ~LinkedList();
-    void insert(int i, eleType value);       // ÔÚÁ´±íµÄµÚ i ¸öÎ»ÖÃ£¬²åÈëÒ»¸öÖµÎª value µÄ½áµã
-    void remove(int i);                      // É¾³ýÁ´±íµÚ i ¸öÎ»ÖÃµÄ½áµã    
-    ListNode* find(eleType value);           // ²éÕÒÁ´±íÖÐÖµÎª value µÄ½áµã
-    ListNode* get(int i);                    // »ñÈ¡Á´±íÖÐµÚ i ¸öÎ»ÖÃµÄ½áµã
-    void update(int i, eleType value);       // ÐÞ¸ÄÁ´±íÖÐµÚ i ¸öÎ»ÖÃµÄ½áµãµÄÖµÎª value
-    void print();                            // ´òÓ¡Á´±íÄÚÈÝ
+    void insert(int i, eleType value);       // åœ¨é“¾è¡¨çš„ç¬¬ i ä¸ªä½ç½®ï¼Œæ’å…¥ä¸€ä¸ªå€¼ä¸º value çš„ç»“ç‚¹
+    void remove(int i);                      // åˆ é™¤é“¾è¡¨ç¬¬ i ä¸ªä½ç½®çš„ç»“ç‚¹    
+    ListNode* find(eleType value);           // æŸ¥æ‰¾é“¾è¡¨ä¸­å€¼ä¸º value çš„ç»“ç‚¹
+    ListNode* get(int i);                    // èŽ·å–é“¾è¡¨ä¸­ç¬¬ i ä¸ªä½ç½®çš„ç»“ç‚¹
+    void update(int i, eleType value);       // ä¿®æ”¹é“¾è¡¨ä¸­ç¬¬ i ä¸ªä½ç½®çš„ç»“ç‚¹çš„å€¼ä¸º value
+    void print();                            // æ‰“å°é“¾è¡¨å†…å®¹
 };
 
 LinkedList::~LinkedList() {
@@ -44,7 +44,7 @@ void LinkedList::insert(int i, eleType value) {
     }
     ListNode* newNode = new ListNode(value);
     if (i == 0) {
-        // ÔÚ±íÍ·²åÈë
+        // åœ¨è¡¨å¤´æ’å…¥
         newNode->next = head;
         head = newNode;
     }
@@ -53,7 +53,7 @@ void LinkedList::insert(int i, eleType value) {
         for (int j = 0; j < i - 1; j++) {
             curr = curr->next;
         }
-        // ÔÚµÚ i ¸öÎ»ÖÃ²åÈë
+        // åœ¨ç¬¬ i ä¸ªä½ç½®æ’å…¥
         newNode->next = curr->next;
         curr->next = newNode;
     }
@@ -65,7 +65,7 @@ void LinkedList::remove(int i) {
         throw std::out_of_range("Invalid position");
     }
     if (i == 0) {
-        // É¾³ý±íÍ·½áµã
+        // åˆ é™¤è¡¨å¤´ç»“ç‚¹
         ListNode* temp = head;
         head = head->next;
         delete temp;
@@ -75,7 +75,7 @@ void LinkedList::remove(int i) {
         for (int j = 0; j < i - 1; j++) {
             curr = curr->next;
         }
-        // É¾³ýµÚ i ¸ö½áµã
+        // åˆ é™¤ç¬¬ i ä¸ªç»“ç‚¹
         ListNode* temp = curr->next;
         curr->next = temp->next;
         delete temp;

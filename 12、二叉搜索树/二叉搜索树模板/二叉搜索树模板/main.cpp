@@ -140,17 +140,17 @@ int main() {
     bst.insert(60);
     bst.insert(100);
 
-    cout << "ÖĞĞò±éÀú£º";
+    cout << "ä¸­åºéå†ï¼š";
     bst.inOrderTraversal();
-    cout << "²éÕÒ 100£º" << bst.search(100) << endl;
-    cout << "²éÕÒ 50£º" << bst.search(50) << endl;
+    cout << "æŸ¥æ‰¾ 100ï¼š" << bst.search(100) << endl;
+    cout << "æŸ¥æ‰¾ 50ï¼š" << bst.search(50) << endl;
 
     bst.remove(70);
-    cout << "ÖĞĞò±éÀú£º";
+    cout << "ä¸­åºéå†ï¼š";
     bst.inOrderTraversal();
 
     bst.insert(65);
-    cout << "ÖĞĞò±éÀú£º";
+    cout << "ä¸­åºéå†ï¼š";
     bst.inOrderTraversal();
 
     return 0;

@@ -71,8 +71,8 @@ bool Stack<T>::empty() const {
 
 class MyQueue {
 private:
-    Stack<int> s1;  // Èë¶ÓÕ»
-    Stack<int> s2;  // ³ö¶ÓÕ»
+    Stack<int> s1;  // å…¥é˜Ÿæ ˆ
+    Stack<int> s2;  // å‡ºé˜Ÿæ ˆ
 
 public:
     MyQueue() {}
